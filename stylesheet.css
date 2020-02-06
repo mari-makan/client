@@ -1,0 +1,107 @@
+/* *{
+    font-family: 'Roboto Mono', monospace;
+  }
+  .navbar {
+    background-color: #ffc0cb;
+  }
+  
+  .nav-item{
+    margin-left: 30px;
+  }
+  
+  .main h1 {
+    padding-top: 30px;
+    text-align: center;
+  }
+  .intro .skat {
+    float: right;
+  }
+  .intro #gambar img{
+    border-radius: 50px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 16%);
+    width: 200px;
+  }
+  .intro {
+    background: rgb(249,139,136);
+    background: linear-gradient(90deg, rgba(249,139,136,1) 48%, rgba(255,203,164,1) 100%);
+    font-style: oblique;
+    height: 620px;
+  }
+  
+  .carousel {
+    background: rgb(255,192,203);
+    background: linear-gradient(90deg, rgba(255,192,203,1) 50%, rgba(255,255,255,1) 100%);
+    height: 620px;
+  } */
+  
+  .carousel-inner .col p {
+    text-align: center;
+  }
+  /* .carousel-inner .perkenalan{ */
+    /* padding-top: 80px; */
+  /* } */
+  .carousel-inner .perkenalan img {
+    width: 80%;
+    border-radius: 50px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 16%);
+    float: right;
+  }
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: calc((100% - 30px) / 2);
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  /* .batas {
+    --borderWidth: 5px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
+  }
+  .batas :after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #F8B195, #F67280   , #C06C84   , #6C5B7B   , #355C7D , #FF8C94 , #FFD3B5 );
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+  
+  
+  @keyframes animatedgradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  } */
