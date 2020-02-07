@@ -41,6 +41,41 @@ function onSignIn(googleUser) {
 }
 
 
+function restaurant(dish){
+    hideAll()
+        console.log(dish)
+        
+        $.ajax(`http://localhost:3000/restaurant/${dish}`, {
+            method : `get`
+        })
+            .done( user => {
+                hideAll()
+                const restaurants = user.data.restaurants
+                // console.log(restaurants[1].restaurant)
+                // console.log($("#listRestaurants"))
+                let counter = 0
+                restaurants.forEach( information => {
+                    counter++
+                    console.log(information.restaurant)
+                    $("#tbody").append(
+                        `<tr>
+                        <td >${counter}</td>
+                        <td>${information.restaurant.name}</td>
+                        <td><img src=${information.restaurant.featured_image} alt="restaurant" class="img-thumbnail" width="200px" height="200px"></td>
+                        <td>${information.restaurant.location.address}</td>
+                        <td>${information.restaurant.user_rating.aggregate_rating}</td>
+                    </tr>`
+                    )});
+                        
+                    $("#homeRestaurants").show()
+            })
+            .fail( err => {
+                console.log(err)
+            })
+            .always( result => {
+                console.log(`success`)
+            })
+}
 
 
 $(document).ready(() => {
@@ -154,40 +189,33 @@ $(document).ready(() => {
     $("#listMenu").on("click", (e) => {
         e.preventDefault()
         hideAll()
-        $("#menu").show()
-    })
-
-
-
-    //GET RESTAURANT
-    $("#restaurant").on("click", (e) => {
-        e.preventDefault()
-        hideAll()
-        let value = $('#restaurant').val()
+        let value = $('#listMenu').val()
         console.log(value)
         
-        $.ajax(`http://localhost:3000/restaurant/${value}`, {
+        $.ajax(`http://localhost:3000/menu/${value}`, {
             method : `get`
         })
             .done( user => {
                 hideAll()
-                const restaurants = user.data.restaurants
+                const dishes = user.data.meals
+                console.log(dishes)
                 // console.log(restaurants[1].restaurant)
                 // console.log($("#listRestaurants"))
                 let counter = 0
-                restaurants.forEach( information => {
+                dishes.forEach( dish => {
                     counter++
-                    // console.log(information)
-                    $("#tbody").append(
-                        `<tr>
-                        <td >${counter}</td>
-                        <td>${information.restaurant.name}</td>
-                        <td>${information.restaurant.location.address}</td>
-                        <td>${information.restaurant.user_rating.aggregate_rating}</td>
-                    </tr>`
-                    )});
-                        
-                    $("#homeRestaurants").show()
+                    $("#tbodymenu").append(
+                        `
+                            <tr>
+                                <td>${counter}</td>
+                                <td>${dish.strMeal}</td>
+                                <td><button>Cook</button> | <button onclick="restaurant('${dish.strMeal}')" value="${dish.strMeal}">Go to the Restaurant</button> </td>
+                            </tr>
+                        `
+                    )
+                    })
+
+                    $("#menu").show()
             })
             .fail( err => {
                 console.log(err)
@@ -195,15 +223,50 @@ $(document).ready(() => {
             .always( result => {
                 console.log(`success`)
             })
-                
     })
 
-{/* <tr>
-    <th scope="row">${conter}</th>
-    <td>${information.restaurant.name}</td>
-    <td>${information.restaurant.location.address}</td>
-    <td>${information.restaurant.user_rating.aggregate_rating}</td>
-</tr> */}
+
+
+    //GET RESTAURANT
+    // $("#restaurant").on("click", (e) => {
+    //     e.preventDefault()
+    //     hideAll()
+    //     let value = $('#restaurant').val()
+    //     console.log(value)
+        
+    //     $.ajax(`http://localhost:3000/restaurant/${value}`, {
+    //         method : `get`
+    //     })
+    //         .done( user => {
+    //             hideAll()
+    //             const restaurants = user.data.restaurants
+    //             // console.log(restaurants[1].restaurant)
+    //             // console.log($("#listRestaurants"))
+    //             let counter = 0
+    //             restaurants.forEach( information => {
+    //                 counter++
+    //                 console.log(information.restaurant)
+    //                 $("#tbody").append(
+    //                     `<tr>
+    //                     <td >${counter}</td>
+    //                     <td>${information.restaurant.name}</td>
+    //                     <td><img src=${information.restaurant.featured_image} alt="restaurant" class="img-thumbnail" width="200px" height="200px"></td>
+    //                     <td>${information.restaurant.location.address}</td>
+    //                     <td>${information.restaurant.user_rating.aggregate_rating}</td>
+    //                 </tr>`
+    //                 )});
+                        
+    //                 $("#homeRestaurants").show()
+    //         })
+    //         .fail( err => {
+    //             console.log(err)
+    //         })
+    //         .always( result => {
+    //             console.log(`success`)
+    //         })
+                
+    // })
+
 
 
 })
