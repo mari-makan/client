@@ -31,9 +31,9 @@ $(document).ready(() => {
             email : $("#emailSignIn").val(),
             password : $("#passwordSignIn").val()
         }
-
+        console.log(loginUser)
         $.ajax("http://localhost:3000/login", {
-            method : `post`,
+            method : 'post',
             data : loginUser
         })
             .done( user => {
@@ -51,18 +51,17 @@ $(document).ready(() => {
             })
     })
 
-
-
-
-
-
-
     $("#showSignUp").on("click", (e) =>  {
+        hideAll()
+        $("#formSignUp").show()
+    })
+    $("#showSignUp2").on("click", (e) =>  {
         hideAll()
         $("#formSignUp").show()
     })
 
     $("#signUp").on("submit", (e) =>  {
+        e.preventDefault()
         let registerUser = {
             email : $("#emailSignUp").val(),
             password : $("#passwordSignUp").val()
