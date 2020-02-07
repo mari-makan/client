@@ -4,23 +4,28 @@
 function hideAll(){
     $("#home").hide()
     $("#formSignIn").hide()
+    $("#formSignUp").hide()
 }
 
 $(document).ready(() => {
 
-    if(localStorage.token){
+    if(localStorage.token !== undefined){
+        console.log(`masuk`)
         hideAll()
-        $("#home").show()
+        $("#check").show()
     } else {
         hideAll()
         $("#formSignIn").show()
     }
 
     // LOGIN
-    $("#signIn").on("submit", () => {
+    $("#signIn").on("submit", (e) => {
+        // e.preventDefault()
         hideAll()
+        console.log(`masuk`)
         // DUMMY TOKEN  ================================
         localStorage.setItem('token', '123456')
         $("#home").show()
     })
+
 })
