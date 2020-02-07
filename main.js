@@ -2,30 +2,92 @@
 // localStorage.clear()
 
 function hideAll(){
-    $("#home").hide()
+    $("#landing-page").hide()
     $("#formSignIn").hide()
     $("#formSignUp").hide()
+    $("#menu").hide()
 }
 
 $(document).ready(() => {
 
-    if(localStorage.token !== undefined){
-        // console.log(`masuk`)
+    if(localStorage.token){
         hideAll()
-        $("#check").show()
+        $("#landing-page").show()
     } else {
         hideAll()
         $("#formSignIn").show()
     }
 
     // LOGIN
-    $("#signIn").on("submit", (e) => {
-        // e.preventDefault()
+
+    $("#showSignIn").on("click", (e) =>  {
         hideAll()
-        console.log(`masuk`)
-        // DUMMY TOKEN  ================================
-        localStorage.setItem('token', '123456')
-        $("#home").show()
+        $("#formSignIn").show()
     })
 
+    $("#signIn").submit((e) => {
+        e.preventDefault()
+        let loginUser = {
+            email : $("#emailSignIn").val(),
+            password : $("#passwordSignIn").val()
+        }
+
+        $.ajax("http://localhost:3000/login", {
+            method : `post`,
+            data : loginUser
+        })
+            .done( user => {
+                console.log(user)
+                hideAll()
+                $("#landing-page").show()
+                localStorage.setItem('token', user.token)
+                console.log(`masuk`)
+            })
+            .fail( err => {
+                console.log(err)
+            })
+            .always( result => {
+                console.log(`success`)
+            })
+    })
+
+
+
+
+
+
+
+    $("#showSignUp").on("click", (e) =>  {
+        hideAll()
+        $("#formSignUp").show()
+    })
+
+    $("#signUp").on("submit", (e) =>  {
+        let registerUser = {
+            email : $("#emailSignUp").val(),
+            password : $("#passwordSignUp").val()
+        }
+
+        $.ajax("http://localhost:3000/register", {
+            method : `post`,
+            data : registerUser,
+        })
+            .done( user => {
+                hideAll()
+                $("#formSignIn").show()
+            })
+            .fail( err => {
+                console.log(err)
+            })
+            .always( result => {
+                console.log(`success`)
+            })
+    })
+
+
+    $("#showSignOut").on("click", (e) =>  {
+        localStorage.clear()
+        hideAll()
+        $("#formSignIn").show()
+    })
 })
