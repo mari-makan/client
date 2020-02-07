@@ -73,6 +73,7 @@ $(document).ready(() => {
             data : registerUser,
         })
             .done( user => {
+                console.log(user)
                 hideAll()
                 $("#formSignIn").show()
             })
