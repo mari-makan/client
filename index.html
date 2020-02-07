@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-signin-client_id" content="1017703274771-m37okru8lapp6rh9f04dkb1q1c28qnd9.apps.googleusercontent.com">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./stylesheet.css">
@@ -36,7 +37,61 @@
           </div>
       </div>
   </nav>
+  
     <!-- akhir navbar  -->
+
+
+
+
+    <!-- LOGIN -->
+    <div class="container" id="formSignIn">
+      <form id="signIn">
+          <h3>Sign In</h3>
+          <div class="form-group">
+            <label for="emailSignIn">Email address</label>
+            <input type="email" class="form-control" id="emailSignIn" aria-describedby="emailHelp">
+            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="passwordSignIn">Password</label>
+            <input type="password" class="form-control" id="passwordSignIn">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Submit</button><br><br>
+          <button type="button" class="btn btn-warning btn-sm" id="showSignUp2">Sign Up</button>
+          <br><br>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      </form>
+  </div>    
+
+
+
+
+
+  <!-- SIGN UP -->
+  <div class="container" id="formSignUp">
+      <form id="signUp">
+          <h3>Sign Up</h3>
+          <div class="form-group">
+            <label for="emailSignUp">Email address</label>
+            <input type="email" class="form-control" id="emailSignUp" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="passwordSignUp">Password</label>
+            <input type="password" class="form-control" id="passwordSignUp">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </div> 
+
+
+
+
+
+
+
+
     <!-- landing page  -->
   <!-- <div class="container" id="landing-page"> -->
     <div id="landing-page" class="carousel slide" data-ride="carousel">
@@ -50,7 +105,7 @@
           <img src="https://awsimages.detik.net.id/community/media/visual/2019/04/24/de2758a6-ea38-4ae9-8c4b-f2b395a81a22_43.png?w=700&q=90"  style="width: 100%;">
           <div class="carousel-caption d-none d-md-block">
             <div class="mx-auto">
-              <button type="button" class="btn btn-outline-secondary">Choose me</button>
+              <button type="button" class="btn btn-outline-secondary" id="listMenu">Choose me</button>
             </div>
             <h5>First slide label</h5>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -74,7 +129,7 @@
     <div class="tagCosplay text-center pt-5">
         <h1>Menu</h1>
     </div>
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper" id=>
         <div class="swiper-slide">
             <div class="batas" >
               <div class="card" style="width: 18rem;">
@@ -84,137 +139,76 @@
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
                 <div class="card-body">
-                  <a href="#">Card link</a>
-                  <a href="#">Another link</a>
+                  <a href="#" id="recipe">Get Recipe</a>
+                  <button id="restaurant" value="Chicken">Find Restaurant</button>
                 </div>
               </div>
             </div>
         </div>
-        <div class="swiper-slide">
-          <div class="batas" >
-            <div class="card" style="width: 18rem;">
-              <img src="https://selerasa.com/wp-content/uploads/2015/12/images_daging_ayam-goreng-1200x675.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-              <div class="card-body">
-                <a href="#">Card link</a>
-                <a href="#">Another link</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="batas" >
-            <div class="card" style="width: 18rem;">
-              <img src="https://selerasa.com/wp-content/uploads/2015/12/images_daging_ayam-goreng-1200x675.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-              <div class="card-body">
-                <a href="#">Card link</a>
-                <a href="#">Another link</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="batas" >
-            <div class="card" style="width: 18rem;">
-              <img src="https://selerasa.com/wp-content/uploads/2015/12/images_daging_ayam-goreng-1200x675.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-              <div class="card-body">
-                <a href="#">Card link</a>
-                <a href="#">Another link</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="batas" >
-            <div class="card" style="width: 18rem;">
-              <img src="https://selerasa.com/wp-content/uploads/2015/12/images_daging_ayam-goreng-1200x675.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-              <div class="card-body">
-                <a href="#">Card link</a>
-                <a href="#">Another link</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="batas" >
-            <div class="card" style="width: 18rem;">
-              <img src="https://selerasa.com/wp-content/uploads/2015/12/images_daging_ayam-goreng-1200x675.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-              <div class="card-body">
-                <a href="#">Card link</a>
-                <a href="#">Another link</a>
-              </div>
-            </div>
-          </div>
-        </div>
+       
+        
+        
+        
+        
     <!-- Add Pagination -->
     </div>
    <div class="swiper-pagination"></div>
   </div>
   <!-- akhir category  -->
 
-    <!-- LOGIN -->
-    <div class="container" id="formSignIn">
-        <form id="signIn">
-            <h3>Sign In</h3>
-            <div class="form-group">
-              <label for="emailSignIn">Email address</label>
-              <input type="email" class="form-control" id="emailSignIn" aria-describedby="emailHelp">
-              <small class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <label for="passwordSignIn">Password</label>
-              <input type="password" class="form-control" id="passwordSignIn">
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Submit</button><br><br>
-            <button type="button" class="btn btn-warning btn-sm" id="showSignUp2">Sign Up</button>
-        </form>
-    </div>    
-
-
-    <!-- SIGN UP -->
-    <div class="container" id="formSignUp">
-        <form id="signUp">
-            <h3>Sign Up</h3>
-            <div class="form-group">
-              <label for="emailSignUp">Email address</label>
-              <input type="email" class="form-control" id="emailSignUp" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group">
-              <label for="passwordSignUp">Password</label>
-              <input type="password" class="form-control" id="passwordSignUp">
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>   
-
-
-
-
+  
 
 
     <!-- RESTAURANT -->
 
+  <div id="homeRestaurants" class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Name Restaurant</th>
+          <th scope="col">Address</th>
+          <th scope="col">Rating</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        
+      </tbody>
+    </table>
+  </div>
+
+
+    <!-- <div class="swiper-container" id="homeRestaurants">
+      <div class="tagCosplay text-center pt-5">
+          <h1>Restaurant</h1>
+      </div>
+
+      
+
+      <div class="swiper-wrapper" id="listRestaurants"> -->
+          <!-- <div class="swiper-slide">
+              <div class="batas" >
+                <div class="card" style="width: 18rem;">
+                  <img src="https://selerasa.com/wp-content/uploads/2015/12/images_daging_ayam-goreng-1200x675.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <div class="card-body">
+                    <button id="viewRestaur" value="Chicken">See The Restaurants</button>
+                  </div>
+                </div>
+              </div>
+          </div> -->
+          
+          
+          
+          
+          
+      <!-- Add Pagination -->
+      <!-- </div>
+     <div class="swiper-pagination"></div>
+    </div> -->
     
 
 
@@ -247,6 +241,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="./main.js"></script>
   </body>
 </html>
