@@ -72,7 +72,12 @@
     -webkit-align-items: center;
     align-items: center;
   }
-
+  .batas {
+    height: 500px;
+  }
+  .card {
+    margin-top: 20px;
+  }
   /* .batas {
     --borderWidth: 5px;
     background: #1D1F20;
