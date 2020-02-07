@@ -7,6 +7,16 @@ function hideAll(){
     
 }
 
+function findby (params){
+    console.log(params)
+    $.ajax(`http://localhost:3000/menu/${params}`,{
+        method : "get"
+    })
+        .done(data => {
+            console.log(data)
+        })
+}
+
 function onSignIn(googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
     console.log(id_token)
@@ -62,7 +72,21 @@ $(document).ready(() => {
             data : loginUser
         })
             .done( user => {
-                console.log(user)
+                $.ajax(`http://localhost:3000/list-menu`, {
+                    method : `get`
+                })
+                    .done( data => {
+                        $("#tbodymenu").empty()
+                        $.each(data.data.meals,(index,value) => {
+                            $("#tbodymenu").append(
+                            `<tr>
+                                <td >${value.strCategory}</td>
+                                <td><a onclick="findby('${value.strCategory}')" value="${value.strCategory}"> choose me </a></td>
+                            </tr>`
+                            )
+                        })
+                    })
+                // console.log(user)
                 hideAll()
                 $("#landing-page").show()
                 localStorage.setItem('token', user.token)
