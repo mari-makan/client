@@ -25,13 +25,13 @@
           <div class=" float-left" id="navbarNav">
               <ul class="navbar-nav mx-auto">
                   <li class="nav-item font-weight-bold ">
-                      <a class="nav-link" href="#" id="showSignIn">Sign In</a>
+                      <a class="nav-link" id="showSignIn">Sign In</a>
                   </li>
                   <li class="nav-item font-weight-bold ">
-                    <a class="nav-link" href="#" id="showSignOut">Sign Out </a>
+                    <a class="nav-link" id="showSignOut">Sign Out </a>
                 </li>
                 <li class="nav-item font-weight-bold ">
-                    <a class="nav-link" href="#" id="showSignUp">Sign Up </a>
+                    <a class="nav-link" id="showSignUp">Sign Up </a>
                 </li>
               </ul>
           </div>
@@ -105,7 +105,7 @@
           <img src="https://awsimages.detik.net.id/community/media/visual/2019/04/24/de2758a6-ea38-4ae9-8c4b-f2b395a81a22_43.png?w=700&q=90"  style="width: 100%;">
           <div class="carousel-caption d-none d-md-block">
             <div class="mx-auto">
-              <button type="button" class="btn btn-outline-secondary" id="listMenu">Choose me</button>
+              <button type="button" class="btn btn-outline-secondary" id="listMenu" value="Chicken">Choose me</button>
             </div>
             <h5>First slide label</h5>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -124,37 +124,31 @@
   </div>
 <!-- </div>   -->
 <!-- akhir corousel  -->
-  <!-- category  -->
-  <div class="swiper-container" id="menu">
-    <div class="tagCosplay text-center pt-5">
-        <h1>Menu</h1>
-    </div>
-    <div class="swiper-wrapper" id=>
-        <div class="swiper-slide">
-            <div class="batas" >
-              <div class="card" style="width: 18rem;">
-                <img src="https://selerasa.com/wp-content/uploads/2015/12/images_daging_ayam-goreng-1200x675.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <div class="card-body">
-                  <a href="#" id="recipe">Get Recipe</a>
-                  <button id="restaurant" value="Chicken">Find Restaurant</button>
-                </div>
-              </div>
-            </div>
-        </div>
-       
+
+
+
+
+<!-- DISHES -->
+  <div class="container" id="menu">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Dish</th>
+          <th scope="col">Search or Cook?</th>
+        </tr>
+      </thead>
+      <tbody id="tbodymenu">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
         
-        
-        
-        
-    <!-- Add Pagination -->
-    </div>
-   <div class="swiper-pagination"></div>
+      </tbody>
+    </table>
   </div>
-  <!-- akhir category  -->
+
 
   
 
@@ -167,6 +161,7 @@
         <tr>
           <th scope="col">No</th>
           <th scope="col">Name Restaurant</th>
+          <th scope="col"> </th>
           <th scope="col">Address</th>
           <th scope="col">Rating</th>
         </tr>
@@ -176,44 +171,6 @@
       </tbody>
     </table>
   </div>
-
-
-    <!-- <div class="swiper-container" id="homeRestaurants">
-      <div class="tagCosplay text-center pt-5">
-          <h1>Restaurant</h1>
-      </div>
-
-      
-
-      <div class="swiper-wrapper" id="listRestaurants"> -->
-          <!-- <div class="swiper-slide">
-              <div class="batas" >
-                <div class="card" style="width: 18rem;">
-                  <img src="https://selerasa.com/wp-content/uploads/2015/12/images_daging_ayam-goreng-1200x675.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                  <div class="card-body">
-                    <button id="viewRestaur" value="Chicken">See The Restaurants</button>
-                  </div>
-                </div>
-              </div>
-          </div> -->
-          
-          
-          
-          
-          
-      <!-- Add Pagination -->
-      <!-- </div>
-     <div class="swiper-pagination"></div>
-    </div> -->
-    
-
-
-
-
 
     
   <!-- akhir category -->
