@@ -7,6 +7,10 @@ function hideAll(){
     
 }
 
+function logout (){
+    
+}
+
 function findby (params){
     console.log(params)
     $.ajax(`http://localhost:3000/menu/${params}`,{
